@@ -10,47 +10,24 @@
 <!doctype html>
 <html lang="en">
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
     <title><?$APPLICATION->ShowTitle()?></title>
     <?$APPLICATION->ShowHead();?>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
+    <?
+    use Bitrix\Main\Page\Asset;
 
-    <!-- Bootstrap core CSS -->
-    <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
+    Asset::getInstance()->addString("<meta charset='utf-8'>");
+    Asset::getInstance()->addString(
+            '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">'
+    );
+    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/script.js");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/style.css");
+    //JQuery
+    Asset::getInstance()->addJs("https://code.jquery.com/jquery-3.5.1.slim.min.js");
+    //Bootstrap core CSS
+    Asset::getInstance()->addCss("/assets/dist/css/bootstrap.css");
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-
-        body {
-            padding-top: 5rem;
-        }
-
-        #panel {
-            position: absolute;
-            bottom: 0;
-            z-index: 5000;
-            width: 100%;
-        }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="starter-template.css" rel="stylesheet">
+    ?>
 </head>
 <body>
 <div id="panel"><?$APPLICATION->ShowPanel()?></div>
@@ -84,6 +61,4 @@
         </form>
     </div>
 </nav>
-
-
 <main role="main" class="container">
