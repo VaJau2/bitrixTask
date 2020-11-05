@@ -48,8 +48,20 @@ class GeocodeSearch extends CBitrixComponent
      */
     public function searchAction($sName)
     {
+        $aParams = explode(',', $sName);
+        $sQuery = "?streetAddress=" . $aParams[0];
+        $sQuery .= "&city=". $aParams[1];
+        $sQuery .= "&state=". $aParams[2];
+        $sQuery .= "&zip=" . $aParams[3];
+        $sQuery .= "&apikey=demo&format=json&census=true&censusYear=2000|2010&notStore=false&version=4.01";
+        $sCite = "https://geoservices.tamu.edu/Services/Geocode/WebService/GeocoderWebServiceHttpNonParsed_V04_01.aspx";
+        //TODO
+        //запрогать отправление запроса через SoapClient
+
+        var_dump($sCite . $sQuery); die();
+
         if ($sName == "9355 Burton Way, Beverly Hills, ca, 42211") {
-            $aResult = ["status" => "error"];
+            $aResult = ["status" => "error"]; //выдает "город не найден"
         } else {
             $aResult = ["status" => "success", "latitude" => 42, 'longitude' => 42];
         }
