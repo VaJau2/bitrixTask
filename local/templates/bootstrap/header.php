@@ -22,11 +22,10 @@
     );
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/script.js");
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/style.css");
-    //JQuery
-    Asset::getInstance()->addJs("https://code.jquery.com/jquery-3.5.1.min.js");
-    //Bootstrap core CSS
     Asset::getInstance()->addCss("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
-
+    Asset::getInstance()->addJs("https://code.jquery.com/jquery-3.5.1.min.js");
+    Asset::getInstance()->addJs("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js");
+    Asset::getInstance()->addJs("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js");
     ?>
 </head>
 <body>

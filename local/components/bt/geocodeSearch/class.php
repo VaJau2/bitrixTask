@@ -48,7 +48,12 @@ class GeocodeSearch extends CBitrixComponent
      */
     public function searchAction($sName)
     {
-        $aResult = ["status" => "success", "data" => $sName];
+        if ($sName == "9355 Burton Way, Beverly Hills, ca, 42211") {
+            $aResult = ["status" => "error"];
+        } else {
+            $aResult = ["status" => "success", "latitude" => 42, 'longitude' => 42];
+        }
+
         return $aResult;
     }
 
