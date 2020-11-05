@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+    <title><![CDATA[Навигатор Основной сайт]]></title>
+    <parser>
+        <target>docs/.cache</target>
+        <encoding>utf8</encoding>
+        <markers>
+            <item>TODO</item>
+            <item>FIXME</item>
+        </markers>
+        <extensions>
+            <extension>php</extension>
+        </extensions>
+    </parser>
+    <transformer>
+        <target>docs</target>
+    </transformer>
+    <transformations>
+        <template name="responsive-pug" />
+    </transformations>
+    <files>
+        <directory>src</directory>
+        <directory>tests</directory>
+        <directory>public/local</directory>
+        <file>bootstrap.php</file>
+        <ignore>public/local/modules/*</ignore>
+        <ignore>tests/_data/*</ignore>
+        <ignore>tests/_output/*</ignore>
+        <ignore>tests/_support/*</ignore>
+    </files>
+</phpdoc>

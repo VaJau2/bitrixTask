@@ -1,0 +1,3 @@
+#ignore bitrix folder 'cause it's too large
+bitrix
+bitrix/*
