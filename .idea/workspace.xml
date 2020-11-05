@@ -20,13 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea1d6945-9188-4404-a79f-6e5de9f08aed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/templates/bootstrap/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/templates/bootstrap/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/.description.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/class.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/lang/en/.description.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/lang/ru/.description.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/templates/.default/lang/en/template.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/templates/.default/lang/ru/template.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/templates/.default/template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local/templates/bootstrap/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/templates/bootstrap/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local/templates/bootstrap/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/templates/bootstrap/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/templates/bootstrap/include_areas/company_name.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/templates/bootstrap/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/local/templates/bootstrap/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +52,8 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/local/templates/bootstrap" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/local/components/geocodeSearch/lang/en" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -61,10 +65,14 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/local/components/bt" />
+      <recent name="$PROJECT_DIR$/local/components/geocodeSearch/templates/.default" />
       <recent name="$PROJECT_DIR$/local/templates/bootstrap" />
       <recent name="$PROJECT_DIR$/assets/dist/js" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/local/components/geocodeSearch/lang/en" />
+      <recent name="$PROJECT_DIR$/local/components/geocodeSearch/templates/.default/lang" />
       <recent name="$PROJECT_DIR$/local/templates/bootstrap" />
     </key>
   </component>
@@ -77,8 +85,16 @@
       <option name="presentableId" value="Default" />
       <updated>1604547623539</updated>
       <workItem from="1604547624811" duration="3399000" />
-      <workItem from="1604551074506" duration="5582000" />
+      <workItem from="1604551074506" duration="15474000" />
     </task>
+    <task id="LOCAL-00001" summary="added frontend for geolocation form">
+      <created>1604557217309</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604557217309</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +111,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added frontend for geolocation form" />
+    <option name="LAST_COMMIT_MESSAGE" value="added frontend for geolocation form" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="543" y="214" width="824" height="691" key="#PHP_CodeSniffer" timestamp="1604549204857">
       <screen x="0" y="27" width="1920" height="1053" />
@@ -104,17 +124,33 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="738" y="303" width="424" height="520" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604549203125" />
+    <state x="755" y="479" width="399" height="156" key="NewPhpFileDialog" timestamp="1604559249679">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="755" y="479" width="399" height="156" key="NewPhpFileDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604559249679" />
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1604551025703">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604551025703" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604557222021">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604557222021" />
+    <state x="651" y="292" width="618" height="522" key="find.popup" timestamp="1604563972086">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="651" y="292" width="618" height="522" key="find.popup/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604563972086" />
     <state x="624" y="252" key="run.anything.popup" timestamp="1604551907712">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="624" y="252" key="run.anything.popup/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604551907712" />
-    <state x="685" y="467" width="540" height="179" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604549351546">
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1604564712150">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="685" y="467" width="540" height="179" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604549351546" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604564712150" />
+    <state x="685" y="467" width="540" height="179" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1604564060827">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="685" y="467" width="540" height="179" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604564060827" />
   </component>
 </project>

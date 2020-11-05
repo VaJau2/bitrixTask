@@ -23,9 +23,9 @@
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/script.js");
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/style.css");
     //JQuery
-    Asset::getInstance()->addJs("https://code.jquery.com/jquery-3.5.1.slim.min.js");
+    Asset::getInstance()->addJs("https://code.jquery.com/jquery-3.5.1.min.js");
     //Bootstrap core CSS
-    Asset::getInstance()->addCss("/assets/dist/css/bootstrap.css");
+    Asset::getInstance()->addCss("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
 
     ?>
 </head>
@@ -47,7 +47,8 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">Dropdown</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
                     <a class="dropdown-item" href="#">Action</a>
                     <a class="dropdown-item" href="#">Another action</a>
