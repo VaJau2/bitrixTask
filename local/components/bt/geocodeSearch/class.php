@@ -45,6 +45,7 @@ class GeocodeSearch extends CBitrixComponent
      * @param string $sName
      *
      * @return array
+     * @throws SoapFault
      */
     public function searchAction($sName)
     {
@@ -54,11 +55,9 @@ class GeocodeSearch extends CBitrixComponent
         $sQuery .= "&state=". $aParams[2];
         $sQuery .= "&zip=" . $aParams[3];
         $sQuery .= "&apikey=demo&format=json&census=true&censusYear=2000|2010&notStore=false&version=4.01";
-        $sCite = "https://geoservices.tamu.edu/Services/Geocode/WebService/GeocoderWebServiceHttpNonParsed_V04_01.aspx";
-        //TODO
-        //запрогать отправление запроса через SoapClient
+        $sUrl = "https://geoservices.tamu.edu/Services/Geocode/WebService/GeocoderService_V04_01.asmx?WSDL ";
 
-        var_dump($sCite . $sQuery); die();
+
 
         if ($sName == "9355 Burton Way, Beverly Hills, ca, 42211") {
             $aResult = ["status" => "error"]; //выдает "город не найден"

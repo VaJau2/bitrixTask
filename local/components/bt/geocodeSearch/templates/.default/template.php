@@ -1,6 +1,7 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) {
     die();
 }
+
 ?>
 
 <section class="section m-3">
@@ -21,7 +22,7 @@
                     </div>
                 </div>
             </form>
-
+            <span id="errorLabel" class="error-message px-4" style="display:none">Текст ошибки</span>
         </div>
         <div class="collapse" id="coordsResult">
             <div class="dropdown-divider"></div>

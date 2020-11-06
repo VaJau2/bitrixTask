@@ -20,15 +20,13 @@
     Asset::getInstance()->addString(
             '<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">'
     );
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/script.js");
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/style.css");
     Asset::getInstance()->addCss("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
     Asset::getInstance()->addJs("https://code.jquery.com/jquery-3.5.1.min.js");
     Asset::getInstance()->addJs("https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js");
     Asset::getInstance()->addJs("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js");
     ?>
 </head>
-<body>
+<body style="padding-top: 5rem;">
 <div id="panel"><?$APPLICATION->ShowPanel()?></div>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <span class="navbar-brand">Задания по битриксу </span>
