@@ -70,18 +70,6 @@ class GeocodeSearch extends CBitrixComponent
         $aResponde = current($aResponde)->WebServiceGeocodeQueryResults->WebServiceGeocodeQueryResult;
         $fLat = $aResponde->Latitude;
         $fLong = $aResponde->Longitude;
-//        $transport->callSoap("GeocodeAddressNonParsed", [
-//            "streetAddress" => "9355 Burton Way",
-//            "city" => "Beverly Hills",
-//            "state" => "ca",
-//            "zip" => "90210",
-//            "apiKey" => "demo",
-//            "version" => 4.01,
-//            "shouldCalculateCensus" => true,
-//            "censusYear" => "AllAvailable",
-//            "shouldReturnReferenceGeometry" => false,
-//            "shouldNotStoreTransactionDetails" => true,
-//            ]);
 
         if ($fLat == null || $fLong == null) {
             $aResult = ["status" => "error"]; //выдает "город не найден"
@@ -119,9 +107,4 @@ class SoapTransport
     public function __call($name, $params) {
         return $this->getClient()->__soapCall($name, $params);
     }
-
-//    public function callSoap($functionName, $aParams) {
-//        $responde = $this->getClient()->__soapCall($functionName, $aParams);
-//        var_dump($responde);
-//    }
 }
