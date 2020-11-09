@@ -1,7 +1,7 @@
 <?php
 
 use Bitrix\Main\Context;
-use Bitrix\Main\Engine\Contract\Controllerable;
+use Bitrix\Main\Data\Cache;
 
 /**
  * Класс отправляет запрос на геокодер и возвращает отттуда найденные координаты
@@ -13,7 +13,7 @@ use Bitrix\Main\Engine\Contract\Controllerable;
 
 class GeocodeSearch extends CBitrixComponent
 {
-
+    const CACHE_TIME = 7200;
 
     public function __call(string $name, array $arguments)
     {
@@ -50,34 +50,41 @@ class GeocodeSearch extends CBitrixComponent
      * @return array
      * @throws SoapFault
      */
-    public function searchAction($sName)
+    public function searchAction(string $sName)
     {
-        $aParams = explode(',', $sName);
+        $oCache = Cache::createInstance();
+        if ($oCache->initCache(self::CACHE_TIME, $sName)) {
+            return $oCache->getVars();
+        } elseif($oCache->startDataCache(self::CACHE_TIME, $sName)) {
+            $aParams = explode(',', $sName);
 
-        $transport = new SoapTransport();
-        $aResponde = $transport->GeocodeAddressNonParsed([
-            "streetAddress" => $aParams[0],
-            "city" => $aParams[1],
-            "state" => $aParams[2],
-            "zip" => $aParams[3],
-            "apiKey" => "demo",
-            "version" => 4.01,
-            "shouldCalculateCensus" => true,
-            "censusYear" => "AllAvailable",
-            "shouldReturnReferenceGeometry" => false,
-            "shouldNotStoreTransactionDetails" => true,
-        ]);
-        $aResponde = current($aResponde)->WebServiceGeocodeQueryResults->WebServiceGeocodeQueryResult;
-        $fLat = $aResponde->Latitude;
-        $fLong = $aResponde->Longitude;
+            $transport = new SoapTransport();
+            $aResponde = $transport->GeocodeAddressNonParsed([
+                "streetAddress" => $aParams[0],
+                "city" => $aParams[1],
+                "state" => $aParams[2],
+                "zip" => $aParams[3],
+                "apiKey" => "demo",
+                "version" => 4.01,
+                "shouldCalculateCensus" => true,
+                "censusYear" => "AllAvailable",
+                "shouldReturnReferenceGeometry" => false,
+                "shouldNotStoreTransactionDetails" => true,
+            ]);
+            $aResponde = current($aResponde)->WebServiceGeocodeQueryResults->WebServiceGeocodeQueryResult;
+            $fLat = $aResponde->Latitude;
+            $fLong = $aResponde->Longitude;
 
-        if ($fLat == null || $fLong == null) {
-            $aResult = ["status" => "error"]; //выдает "город не найден"
-        } else {
-            $aResult = ["status" => "success", "latitude" => $fLat, 'longitude' => $fLong];
+            if ($fLat == null || $fLong == null) {
+                $aResult = ["status" => "error"]; //выдает "город не найден"
+            } else {
+                $aResult = ["status" => "success", "latitude" => $fLat, 'longitude' => $fLong];
+            }
+
+            $oCache->endDataCache($aResult);
+            return $aResult;
         }
-
-        return $aResult;
+        return ["error in searchAction"];
     }
 
     public function executeComponent()

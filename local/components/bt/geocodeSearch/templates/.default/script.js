@@ -2,7 +2,6 @@ let checkValid = (data) => {
     let regExp = /[0-9]{4} [\w\s]+, [\w\s]+, [\w]+, [0-9]{5}/i;
     return regExp.test(data);
 };
-console.log("test log");
 
 $(document).ready(function() {
     $("#geolocationSend").click(function () {
@@ -14,6 +13,9 @@ $(document).ready(function() {
             errorLabel.innerHTML = "Форма поиска не соответствует требованиям " +
                 "(прим. 9355 Burton Way, Beverly Hills, ca, 90210)";
         } else {
+            let findButton = document.getElementById("geolocationSend");
+            findButton.innerText = "Поиск...";
+            findButton.disabled = true;
 
             $.ajax({
                 type: 'POST',
@@ -23,6 +25,9 @@ $(document).ready(function() {
                 },
                 success: function(data) {
                     data = JSON.parse(data);
+                    findButton.innerText = "Найти координаты";
+                    findButton.disabled = false;
+
                     if (data.status === "success") {
                         adressInput.classList.remove("is-invalid");
                         errorLabel.style.display = "none";

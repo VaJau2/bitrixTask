@@ -21,7 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea1d6945-9188-4404-a79f-6e5de9f08aed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local/components/bt/geocodeSearch/class.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/geocodeSearch/templates/.default/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/templates/.default/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +78,8 @@
       <updated>1604547623539</updated>
       <workItem from="1604547624811" duration="3399000" />
       <workItem from="1604551074506" duration="20752000" />
-      <workItem from="1604651727143" duration="8778000" />
+      <workItem from="1604651727143" duration="9390000" />
+      <workItem from="1604891715530" duration="369000" />
     </task>
     <task id="LOCAL-00001" summary="added frontend for geolocation form">
       <created>1604557217309</created>
@@ -115,7 +116,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604655134882</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="done with soap queries">
+      <created>1604663562264</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1604663562264</updated>
+    </task>
+    <task id="LOCAL-00007" summary="deleted comment code">
+      <created>1604663585911</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1604663585911</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +154,9 @@
     <MESSAGE value="added frontend validation" />
     <MESSAGE value="added request data handling" />
     <MESSAGE value="added error messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="added error messages" />
+    <MESSAGE value="done with soap queries" />
+    <MESSAGE value="deleted comment code" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted comment code" />
   </component>
   <component name="WindowStateProjectService">
     <state x="543" y="214" width="824" height="691" key="#PHP_CodeSniffer" timestamp="1604549204857">
@@ -158,10 +175,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604551025703" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604655141557">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604663592302">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604655141557" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604663592302" />
     <state x="651" y="292" width="618" height="522" key="find.popup" timestamp="1604563972086">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
