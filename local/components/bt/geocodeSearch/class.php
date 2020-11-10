@@ -54,9 +54,11 @@ class GeocodeSearch extends CBitrixComponent
         } elseif($oCache->startDataCache(self::CACHE_TIME, $sName)) {
             $aParams = explode(',', $sName);
 
-            require_once("SoapTransport.php");
-            $transport = new \SoapTransport();
-            $aResponde = $transport->GeocodeAddressNonParsed([
+            $wsdl = "https://geoservices.tamu.edu/Services/Geocode/WebService/GeocoderService_V04_01.asmx?WSDL";
+            $oClient = new SoapClient($wsdl, ['soap_version' => SOAP_1_2]);
+
+            $aResponde = $oClient->__soapCall("GeocodeAddressNonParsed",
+                [[
                 "streetAddress" => $aParams[0],
                 "city" => $aParams[1],
                 "state" => $aParams[2],
@@ -67,7 +69,8 @@ class GeocodeSearch extends CBitrixComponent
                 "censusYear" => "AllAvailable",
                 "shouldReturnReferenceGeometry" => false,
                 "shouldNotStoreTransactionDetails" => true,
-            ]);
+            ]]);
+
             $aResponde = current($aResponde)->WebServiceGeocodeQueryResults->WebServiceGeocodeQueryResult;
             $fLat = $aResponde->Latitude;
             $fLong = $aResponde->Longitude;

@@ -19,7 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea1d6945-9188-4404-a79f-6e5de9f08aed" name="Default Changelist" comment="" />
+    <list default="true" id="ea1d6945-9188-4404-a79f-6e5de9f08aed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/geocodeSearch/SoapTransport.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/SoapTransport.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/geocodeSearch/class.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/class.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,7 +92,7 @@
       <workItem from="1604651727143" duration="9390000" />
       <workItem from="1604891715530" duration="12844000" />
       <workItem from="1604905014240" duration="16203000" />
-      <workItem from="1604977318735" duration="20426000" />
+      <workItem from="1604977318735" duration="22499000" />
     </task>
     <task id="LOCAL-00001" summary="added frontend for geolocation form">
       <created>1604557217309</created>
@@ -174,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605000484797</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fixed code">
+      <created>1605000654064</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1605000654064</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,10 +259,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604551025703" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605000488546">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1605000658506">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1605000488546" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1605000658506" />
     <state x="651" y="292" width="618" height="522" key="find.popup" timestamp="1604563972086">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
