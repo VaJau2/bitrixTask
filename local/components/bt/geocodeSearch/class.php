@@ -28,9 +28,9 @@ class GeocodeSearch extends CBitrixComponent
         if($oRequest->isAjaxRequest()) {
             $functionName = $oRequest->get('action') . 'Action';
             $aParams = $oRequest->get('name');
-            $APPLICATION->RestartBuffer();
 
             if (method_exists($this, $functionName)) {
+                $APPLICATION->RestartBuffer();
                 $aResult = $this->$functionName($aParams);
                 echo json_encode($aResult);
                 die();

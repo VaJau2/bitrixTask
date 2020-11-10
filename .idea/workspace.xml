@@ -20,10 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea1d6945-9188-4404-a79f-6e5de9f08aed" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/local/php_interface/init.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/local/php_interface/migrations/Migrations.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/geocodeSearch/class.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksList/class.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksList/templates/.default/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/templates/.default/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksList/templates/.default/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/templates/.default/template.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/.description.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/.parameters.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/class.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/lang/en/.description.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/lang/en/.parameters.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/lang/ru/.description.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/lang/ru/.parameters.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/templates/.default/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/templates/.default/template.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/templates/bootstrap/components/bitrix/main.pagenavigation/onebutton/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/templates/bootstrap/components/bitrix/main.pagenavigation/onebutton/template.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,11 +80,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/local/php_interface" />
       <recent name="$PROJECT_DIR$/local/components/bt/iblocksList/templates/.default" />
       <recent name="$PROJECT_DIR$/local/templates/bootstrap" />
       <recent name="$PROJECT_DIR$/local/templates/.default" />
       <recent name="$PROJECT_DIR$/local/components/bt/geocodeSearch/templates/.default" />
-      <recent name="$PROJECT_DIR$/local/components/bt/geocodeSearch" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/local/components/bt" />
@@ -93,7 +107,7 @@
       <workItem from="1604651727143" duration="9390000" />
       <workItem from="1604891715530" duration="12844000" />
       <workItem from="1604905014240" duration="16203000" />
-      <workItem from="1604977318735" duration="9744000" />
+      <workItem from="1604977318735" duration="20126000" />
     </task>
     <task id="LOCAL-00001" summary="added frontend for geolocation form">
       <created>1604557217309</created>
@@ -165,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604983551168</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="done with &quot;not-better&quot; version">
+      <created>1604987203595</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1604987203595</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,17 +215,22 @@
     <MESSAGE value="added cache and process message" />
     <MESSAGE value="done with iblockList (version without bitrix:page)" />
     <MESSAGE value="removed 'use'" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed 'use'" />
+    <MESSAGE value="done with &quot;not-better&quot; version" />
+    <option name="LAST_COMMIT_MESSAGE" value="done with &quot;not-better&quot; version" />
   </component>
   <component name="WindowStateProjectService">
     <state x="543" y="214" width="824" height="691" key="#PHP_CodeSniffer" timestamp="1604549204857">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="543" y="214" width="824" height="691" key="#PHP_CodeSniffer/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604549204857" />
-    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604919394971">
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604989509679">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604919394971" />
+    <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604989509679" />
+    <state x="686" y="355" width="537" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604987968559">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="686" y="355" width="537" height="403" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604987968559" />
     <state x="693" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1604909020211">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -225,22 +251,26 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="755" y="479" width="399" height="156" key="NewPhpFileDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604559249679" />
+    <state x="694" y="237" width="522" height="640" key="RollbackChangesDialog" timestamp="1604989849291">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="694" y="237" width="522" height="640" key="RollbackChangesDialog/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604989849291" />
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1604551025703">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604551025703" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604983553032">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604987207919">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604983553032" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604987207919" />
     <state x="651" y="292" width="618" height="522" key="find.popup" timestamp="1604563972086">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="651" y="292" width="618" height="522" key="find.popup/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604563972086" />
-    <state x="624" y="252" key="run.anything.popup" timestamp="1604914502595">
+    <state x="624" y="252" key="run.anything.popup" timestamp="1604990014976">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="624" y="252" key="run.anything.popup/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604914502595" />
+    <state x="624" y="252" key="run.anything.popup/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604990014976" />
     <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1604904705558">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

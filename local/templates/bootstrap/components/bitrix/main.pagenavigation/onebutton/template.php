@@ -5,8 +5,10 @@
 /**
  * @var array $arResult
  */
+if ($arResult['PAGE_COUNT'] == $arResult['CURRENT_PAGE']) {
+    return;
+}
 ?>
-
-<button id="moreButton" class="btn btn-outline-primary" data-page="<?=$arResult["CURRENT_PAGE"]+1?>">
+<button id="moreButton" class="btn btn-outline-primary js-show-more" data-page="<?=$arResult["CURRENT_PAGE"]+1?>">
     Ещё
 </button>

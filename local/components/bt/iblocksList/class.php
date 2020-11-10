@@ -4,9 +4,7 @@ use Bitrix\Iblock\ElementTable;
 use Bitrix\Main\Context;
 use Bitrix\Main\Data\Cache;
 use Bitrix\Main\Entity\ExpressionField;
-use Bitrix\Main\Entity\ReferenceField;
 use Bitrix\Main\Loader;
-use Bitrix\Main\ORM;
 use Bitrix\Main\UI\PageNavigation;
 
 class IblocksList extends CBitrixComponent
@@ -56,50 +54,6 @@ class IblocksList extends CBitrixComponent
         return preg_replace($sPattern, ".", $sFio);
     }
 
-
-    /**
-     * Добавляем кастомное свойство инфоблока для запроса в БД
-     *
-     * @param $oQuery
-     * @param array $aSelect
-     * @param array $aPropNames
-     *
-     * @return array
-     * @throws \Bitrix\Main\ArgumentException
-     * @throws \Bitrix\Main\SystemException
-     */
-    public static function selectCustomProp($oQuery, array $aPropNames)
-    {
-        foreach ($aPropNames as $sProp) {
-            $sKey         = "ref_" . $sProp;
-            $sKeyProperty = $sProp . "_PROPERTY";
-
-            $oQuery->registerRuntimeField(
-                new ReferenceField(
-                    $sKeyProperty,
-                    \Bitrix\Iblock\PropertyTable::class,
-                    ORM\Query\Join::on("this.IBLOCK_ID", "ref.IBLOCK_ID")
-                        -> where(
-                            "ref.CODE",
-                            $sProp
-                        )
-                )
-            )->registerRuntimeField(
-                $sKey,
-                [
-                    "data_type" => "ElementPropertyTable",
-                    "reference" => [
-                        "=this.ID" => "ref.IBLOCK_ELEMENT_ID",
-                        "=this.$sKeyProperty.ID" => "ref.IBLOCK_PROPERTY_ID"
-                    ]
-                ]
-            );
-            $aSelect[$sProp] = $sKey. '.VALUE';
-        }
-        return $aSelect;
-    }
-
-
     /**
      * Обрабатываем ajax-запросы
      *
@@ -109,12 +63,11 @@ class IblocksList extends CBitrixComponent
     {
         $oRequest = Context::getCurrent()->getRequest();
         global $APPLICATION;
-
         if($oRequest->isAjaxRequest()) {
             $functionName = $oRequest->get('action') . 'Action';
-            $APPLICATION->RestartBuffer();
 
             if (method_exists($this, $functionName)) {
+                $APPLICATION->RestartBuffer();
                 $aResult = $this->$functionName();
                 echo json_encode($aResult);
                 die();
@@ -128,61 +81,35 @@ class IblocksList extends CBitrixComponent
      *
      * @param int $sPage
      *
-     * @return string[]
+     * @return void
      */
-    public function pageAction()
-    {
-        $this->oNavigation = new PageNavigation("page");
-        $this->oNavigation->setRecordCount($this->getIblocksCount());
-        $this->oNavigation->setPageSize($this->arParams["ELEMENTS_COUNT"]);
-
-        $this->oNavigation->initFromUri();
-
-        $this->arResult["pageData"] = $this->getIblockElements();
-        //на последней странице оно продолжает рисовать ссылку на следующую
-        if ($this->oNavigation->getCurrentPage() < $this->oNavigation->getPageCount()) {
-            $this->arResult['nav'] = $this->getNavString();
-        }
-
-
-        return $this->arResult;
+    public function pageAction() {
+        $this->includeComponentTemplate();
     }
 
-
     /**
-     * Вытаскиваем массив элементов кастомного свойства инфоблока
+     * Вытаскиваем массив элементов выбранных кастомных свойств инфоблока
      *
-     * @param string $iBlockId
-     * @param string $sElementId
-     * @param string $sPropertyName
+     * @param int $iBlockId
+     * @param array $aProps
      *
      * @return array
      */
-    public static function getCustomPropertyArray(string $iBlockId, string $sElementId, string $sPropertyName)
+    public static function getCustomProperties(int $iBlockId, array $aProps)
     {
-        $oQuery  = ElementTable::query();
-
-        $aSelect = self::selectCustomProp($oQuery, [
-            $sPropertyName
-        ]);
-
-        $oQuery->setSelect($aSelect);
-        $oQuery->setFilter([
-            "IBLOCK_ID" => $iBlockId,
-            "ID" => $sElementId
-        ]);
-        $oQuery = $oQuery->exec();
-        //убираем лишние поля из свойства
-        $aProperties = [];
-        do {
-            $aTempProperty = $oQuery->fetch();
-            if ($aTempProperty != null) {
-                $aProperties[] = $aTempProperty[$sPropertyName];
-            }
-        } while ($aTempProperty != null);
-
-        return $aProperties;
+        $aTempResult = [];
+        $aResult = [];
+        CIBlockElement::GetPropertyValuesArray($aTempResult, $iBlockId, ['PROPERTIES' => $aProps]);
+        //если массив пуст, оно вытаскивает NULL или false, а должно вытаскивать []
+        foreach($aTempResult as $iId => $aTempProperty) {
+            $aResult[$iId] = [
+                "USERS" => $aTempProperty["USERS"]["VALUE"] ?: [],
+                "ELEMENTS" => $aTempProperty["ELEMENTS"]["VALUE"] ?: []
+            ];
+        }
+        return $aResult;
     }
+
 
     /**
      * Выводим количество элементов инфоблока
@@ -191,17 +118,24 @@ class IblocksList extends CBitrixComponent
      */
     public function getIblocksCount()
     {
-        //new ExpressionField("COUNT", 'COUNT(%s)', ['id'])
-        Loader::includeModule('iblock');
-        $iBlockId = self::getIblockId($this->arParams["IBLOCK_CODE"]);
+        $oCache = Cache::createInstance();
+        if ($oCache->initCache(7200, "iblocksCount")) {
+            return $oCache->getVars();
+        } elseif ($oCache->startDataCache()) {
+            Loader::includeModule('iblock');
+            $iBlockId = self::getIblockId($this->arParams["IBLOCK_CODE"]);
 
-        $iBlockElemensCount = current(ElementTable::getList([
-            'select' => [new ExpressionField("COUNT", 'COUNT(%s)', ['id'])],
-            'filter' => ["IBLOCK_ID" => $iBlockId]
-        ])->fetch());
+            $iBlockElemensCount = current(ElementTable::getList([
+                'select' => [new ExpressionField("COUNT", 'COUNT(%s)', ['id'])],
+                'filter' => ["IBLOCK_ID" => $iBlockId]
+            ])->fetch());
 
-        return $iBlockElemensCount;
+            $oCache->endDataCache($iBlockElemensCount);
+            return $iBlockElemensCount;
+        }
+        return 0;
     }
+
 
     /**
      * Выводим массив элементов инфоблока
@@ -221,58 +155,44 @@ class IblocksList extends CBitrixComponent
             'limit' => $this->oNavigation->getLimit(),
             "offset" => $this->oNavigation->getOffset()
         ]);
+        $aCustomProps = self::getCustomProperties($iBlockId, ["ELEMENTS", "USERS"]);
+        $aIblockElements = [];
 
-        do {
-            $aIblockElement = $oQuery->fetch();
+        while($aIblockElement = $oQuery->fetch()) {
+            $aElements = $aCustomProps[$aIblockElement["ID"]]["ELEMENTS"];
+            $aUsers = $aCustomProps[$aIblockElement["ID"]]["USERS"];
 
-            if ($aIblockElement != null) {
-                $aElements = self::getCustomPropertyArray(
-                    $iBlockId,
-                    $aIblockElement["ID"],
-                    "ELEMENTS"
-                );
-                $aUsers = self::getCustomPropertyArray(
-                    $iBlockId,
-                    $aIblockElement["ID"],
-                    "USERS"
-                );
-
-                $aIblockElements[$this->arParams["IBLOCK_CODE"]][$aIblockElement["ID"]] = [
-                    "NAME" => $aIblockElement["NAME"],
-                    "DATE" => $aIblockElement["DATE_CREATE"]->format("d.m.Y"),
-                    "ARRAY_COUNT" => count($aElements + $aUsers),
-                    "ELEMENTS" => $aElements,
-                    "USERS" => $aUsers
-                ];
-            }
-        } while($aIblockElement != null);
+            $aIblockElements[$this->arParams["IBLOCK_CODE"]][$aIblockElement["ID"]] = [
+                "NAME" => $aIblockElement["NAME"],
+                "DATE" => $aIblockElement["DATE_CREATE"]->format("d.m.Y"),
+                "ARRAY_COUNT" => count($aElements + $aUsers),
+                "ELEMENTS" => $aElements,
+                "USERS" => $aUsers
+            ];
+        }
 
         //вытаскиваем элементы второго инфоблока
         $oQuery2 = ElementTable::getList([
             'select' => ["ID", "NAME"],
             'filter' => ["IBLOCK_ID" => $iOtherBlockId],
         ]);
-        do {
-            $aBlockData = $oQuery2->fetch();
+        while($aBlockData = $oQuery2->fetch()) {
             if ($aBlockData != null) {
                 $aIblockElements[$this->arParams["OTHER_IBLOCK_CODE"]][$aBlockData["ID"]] =
                     $aBlockData["ID"] . ', ' . $aBlockData["NAME"];
             }
-        } while ($aBlockData != null);
+        }
 
         //вытаскиваем ФИО юзеров
         $userBy = "id";
         $userOrder = "asc";
         $oUsers = CUser::GetList($userBy, $userOrder);
-        do {
-            $aUser = $oUsers->Fetch();
-
+        while($aUser = $oUsers->Fetch()) {
             if ($aUser != null) {
                 $sUserFio = $aUser["SECOND_NAME"] . ' ' . $aUser["NAME"] . ' ' . $aUser["LAST_NAME"];
                 $aIblockElements["USERS"][$aUser["ID"]] = self::getShortFio($sUserFio);
             }
-        } while ($aUser != null);
-
+        }
 
         return $aIblockElements;
     }
@@ -284,6 +204,7 @@ class IblocksList extends CBitrixComponent
      * @return string
      */
     public function getNavString() {
+
         global $APPLICATION;
         ob_start();
         $APPLICATION->IncludeComponent(
@@ -295,6 +216,7 @@ class IblocksList extends CBitrixComponent
             ),
             false
         );
+
         $result = ob_get_contents();
         ob_end_clean();
         return $result;
@@ -303,16 +225,18 @@ class IblocksList extends CBitrixComponent
 
     public function executeComponent()
     {
-        $this->ajaxProcess();
-
         $this->oNavigation = new PageNavigation('page');
         $this->oNavigation->setRecordCount($this->getIblocksCount());
+
         $this->oNavigation->setPageSize($this->arParams["ELEMENTS_COUNT"]);
 
         $this->oNavigation->initFromUri();
 
         $this->arResult['NAV'] = $this->getNavString();
+
         $this->arResult['IBLOCKS'] = $this->getIblockElements();
+
+        $this->ajaxProcess();
 
         $this->includeComponentTemplate();
     }

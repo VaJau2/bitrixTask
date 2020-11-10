@@ -13,7 +13,7 @@ $iCode2 = $arParams["OTHER_IBLOCK_CODE"];
 
 ?>
 
-<section class="section m-4">
+<section class="section m-4 js-table-container">
     <table class="table table-bordered">
         <thead>
         <tr>
@@ -23,7 +23,7 @@ $iCode2 = $arParams["OTHER_IBLOCK_CODE"];
             <th scope="col">ID и названия элементов</th>
         </tr>
         </thead>
-        <tbody id="iblocksTableBody">
+        <tbody class="js-table-user-body">
         <? foreach($arResult["IBLOCKS"][$iCode1] as $iBlockData) : ?>
             <tr>
                 <th scope="row" rowspan="<?=$iBlockData["ARRAY_COUNT"]?>"><?=$iBlockData["NAME"]?></th>
@@ -50,6 +50,7 @@ $iCode2 = $arParams["OTHER_IBLOCK_CODE"];
 
         </tbody>
     </table>
+
     <?if ($arResult['NAV']):?>
         <?=$arResult['NAV']?>
     <?endif?>
