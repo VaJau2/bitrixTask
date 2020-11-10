@@ -7,7 +7,6 @@ use Bitrix\Main\Entity\ExpressionField;
 use Bitrix\Main\Entity\ReferenceField;
 use Bitrix\Main\Loader;
 use Bitrix\Main\ORM;
-use Bitrix\Main\UI\PageNavigation;
 
 class IblocksListBetter extends CBitrixComponent
 {
