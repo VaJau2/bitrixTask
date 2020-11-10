@@ -23,7 +23,7 @@ $iCode2 = $arParams["OTHER_IBLOCK_CODE"];
             <th scope="col">ID и названия элементов</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="iblocksTableBody">
         <? foreach($arResult["IBLOCKS"][$iCode1] as $iBlockData) : ?>
             <tr>
                 <th scope="row" rowspan="<?=$iBlockData["ARRAY_COUNT"]?>"><?=$iBlockData["NAME"]?></th>

@@ -112,11 +112,10 @@ class IblocksList extends CBitrixComponent
 
         if($oRequest->isAjaxRequest()) {
             $functionName = $oRequest->get('action') . 'Action';
-            $aParams = $oRequest->get('pageNum');
             $APPLICATION->RestartBuffer();
 
             if (method_exists($this, $functionName)) {
-                $aResult = $this->$functionName($aParams);
+                $aResult = $this->$functionName();
                 echo json_encode($aResult);
                 die();
             }
@@ -127,16 +126,26 @@ class IblocksList extends CBitrixComponent
     /**
      * Обрабатываем запрос на показ новой страницы
      *
-     * @param string $sPage
+     * @param int $sPage
      *
      * @return string[]
      */
-    public function pageAction(string $sPage)
+    public function pageAction()
     {
-        var_dump("here is your page");
-        var_dump($this->oNavigation);
+        $this->oNavigation = new PageNavigation("page");
+        $this->oNavigation->setRecordCount($this->getIblocksCount());
+        $this->oNavigation->setPageSize($this->arParams["ELEMENTS_COUNT"]);
 
-        return ["success" => "true"];
+        $this->oNavigation->initFromUri();
+
+        $this->arResult["pageData"] = $this->getIblockElements();
+        //на последней странице оно продолжает рисовать ссылку на следующую
+        if ($this->oNavigation->getCurrentPage() < $this->oNavigation->getPageCount()) {
+            $this->arResult['nav'] = $this->getNavString();
+        }
+
+
+        return $this->arResult;
     }
 
 

@@ -20,65 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea1d6945-9188-4404-a79f-6e5de9f08aed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/SoapTransport.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/.description.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/.parameters.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/ElementPropertyTable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/lang/en/.description.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/lang/en/.parameters.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/lang/ru/.description.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/lang/ru/.parameters.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/templates/.default/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/templates/.default/template.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/.description.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/.parameters.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/class.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/lang/en/.description.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/lang/en/.parameters.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/lang/ru/.description.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/lang/ru/.parameters.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/templates/.default/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/components/bt/iblocksListBetterVersion/templates/.default/template.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/local/templates/bootstrap/components/bitrix/main.pagenavigation/onebutton/template.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local/components/bt/geocodeSearch/class.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local/components/bt/geocodeSearch/templates/.default/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/geocodeSearch/templates/.default/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local/templates/bootstrap/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/templates/bootstrap/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_icon_1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_icon_2.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_icon_3.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_icon_4.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_icon_5.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_icon_6.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_icon_7.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_biggrin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_confuse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_cool.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_cry.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_eek.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_evil.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_exclaim.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_facepalm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_idea.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_kiss.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_like.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_neutral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_question.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_redface.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_sad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_smile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/bx_smile_wink.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/install.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/install_lang_br.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/install_lang_de.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/install_lang_en.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/install_lang_la.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/install_lang_ru.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/install_lang_sc.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/install_lang_tc.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload/tmp/BXTEMP-2020-11-05/09/b328d7f66456955077270806c7d04557/install_lang_ua.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksList/class.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksList/templates/.default/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/templates/.default/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local/components/bt/iblocksList/templates/.default/template.php" beforeDir="false" afterPath="$PROJECT_DIR$/local/components/bt/iblocksList/templates/.default/template.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +93,7 @@
       <workItem from="1604651727143" duration="9390000" />
       <workItem from="1604891715530" duration="12844000" />
       <workItem from="1604905014240" duration="16203000" />
-      <workItem from="1604977318735" duration="5950000" />
+      <workItem from="1604977318735" duration="9744000" />
     </task>
     <task id="LOCAL-00001" summary="added frontend for geolocation form">
       <created>1604557217309</created>
@@ -206,7 +151,21 @@
       <option name="project" value="LOCAL" />
       <updated>1604892745210</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="done with iblockList (version without bitrix:page)">
+      <created>1604983430049</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604983430049</updated>
+    </task>
+    <task id="LOCAL-00010" summary="removed 'use'">
+      <created>1604983551168</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1604983551168</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,7 +192,9 @@
     <MESSAGE value="done with soap queries" />
     <MESSAGE value="deleted comment code" />
     <MESSAGE value="added cache and process message" />
-    <option name="LAST_COMMIT_MESSAGE" value="added cache and process message" />
+    <MESSAGE value="done with iblockList (version without bitrix:page)" />
+    <MESSAGE value="removed 'use'" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed 'use'" />
   </component>
   <component name="WindowStateProjectService">
     <state x="543" y="214" width="824" height="691" key="#PHP_CodeSniffer" timestamp="1604549204857">
@@ -268,10 +229,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604551025703" />
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604892748090">
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1604983553032">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604892748090" />
+    <state x="555" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1366.768@0.27.1920.1053" timestamp="1604983553032" />
     <state x="651" y="292" width="618" height="522" key="find.popup" timestamp="1604563972086">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
