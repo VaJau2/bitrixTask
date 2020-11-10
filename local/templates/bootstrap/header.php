@@ -13,6 +13,19 @@
     <title><?$APPLICATION->ShowTitle()?></title>
     <?$APPLICATION->ShowHead();?>
 
+    <style>
+        #panel {
+            position: fixed;
+            bottom: 0;
+            z-index: 5000;
+            width: 100%;
+        }
+        body {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+    </style>
+
     <?
     use Bitrix\Main\Page\Asset;
 
@@ -26,7 +39,7 @@
     Asset::getInstance()->addJs("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js");
     ?>
 </head>
-<body style="padding-top: 5rem;">
+<body>
 <div id="panel"><?$APPLICATION->ShowPanel()?></div>
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <span class="navbar-brand">Задания по битриксу </span>
